@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { Flex, useColorModeValue } from "@chakra-ui/react";
+import { Navbar } from "components/Elements";
 
 interface ContainerProps {
   children: ReactNode;
@@ -11,10 +12,11 @@ export const Container = ({ children }: ContainerProps) => {
       direction="column"
       minH="100vh"
       w="100vw"
-      p="0 1rem"
       bgColor={useColorModeValue("white", "gray.800")}
     >
-      <Flex w="100%" maxW="1440px" ml="auto" mr="auto" h="100%">
+      <Navbar />
+
+      <Flex w="100%" maxW="1440px" ml="auto" p="0 1rem" mr="auto" h="100%">
         {children}
       </Flex>
     </Flex>
