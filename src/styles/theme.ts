@@ -1,6 +1,16 @@
 import { extendTheme } from "@chakra-ui/react";
+import { GlobalStyleProps, mode } from "@chakra-ui/theme-tools";
+import { Button } from "./button";
 
 export const theme = extendTheme({
+  textStyles: {
+    h1: {
+      fontWeight: "bold"
+    }
+  },
+  components: {
+    Button
+  },
   config: {
     initialColorMode: "light"
   },
@@ -12,11 +22,11 @@ export const theme = extendTheme({
     body: "Roboto, sans-serif"
   },
   styles: {
-    global: {
+    global: (props: GlobalStyleProps) => ({
       body: {
-        bg: "white",
-        color: "#230F5B"
+        bg: mode("white", "gray.800")(props),
+        color: mode("#230F5B", "purple.200")(props)
       }
-    }
+    })
   }
 });
