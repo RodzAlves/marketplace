@@ -13,8 +13,6 @@ import {
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
-// export type NavbarProps = {};
-
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
     px={2}

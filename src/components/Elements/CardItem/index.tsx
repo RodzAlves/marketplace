@@ -7,6 +7,7 @@ import {
   useColorModeValue
 } from "@chakra-ui/react";
 import { useCart } from "contexts/Cart";
+import { ellipsis } from "utils/ellipsis";
 import { formatPrice } from "utils/formatPrice";
 import { Rating } from "../Rating";
 
@@ -42,12 +43,14 @@ const CardItem = ({
       return;
     }
 
-    addToCart({
+    const newItem = {
       id,
       title,
       price,
       quantity: 1
-    });
+    };
+
+    addToCart(newItem);
   };
 
   return (
@@ -55,6 +58,7 @@ const CardItem = ({
       maxW="15rem"
       maxH="30rem"
       h="100%"
+      w="100%"
       borderWidth="1px"
       borderRadius="lg"
       overflow="hidden"
@@ -87,14 +91,12 @@ const CardItem = ({
       >
         <Box>
           <Heading as="h2" size="sm" mb="1">
-            {title.length > 45 ? `${title.slice(0, 45)}...` : title}
+            {ellipsis(title, 40)}
           </Heading>
           <Box as="h2" mb="1" fontWeight="semibold">
             Description:
             <Box as="p" fontSize="xs" fontWeight="normal">
-              {description.length > 100
-                ? `${description.slice(0, 100)}...`
-                : description}
+              {ellipsis(description, 100)}
             </Box>
           </Box>
 
@@ -111,6 +113,7 @@ const CardItem = ({
         </Box>
 
         <Button
+          minH="4rem"
           maxH="4rem"
           size="lg"
           backgroundColor={isInCart(id) ? "tomato" : borderColor}

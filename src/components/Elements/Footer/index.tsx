@@ -21,7 +21,6 @@ const Footer = () => {
       bottom={0}
       left={0}
       p={4}
-      pb={8}
       borderTopWidth="1px"
       borderTopColor={borderColor}
       transitionDuration="200ms"
