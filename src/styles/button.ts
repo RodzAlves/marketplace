@@ -1,7 +1,7 @@
 export const Button = {
   baseStyle: {
     fontWeight: "normal",
-    borderRadius: "80px",
+    borderRadius: "8px",
     _focus: { boxShadow: "none" },
     _active: {
       bg: "purple.800"
@@ -13,6 +13,10 @@ export const Button = {
       color: "white"
     },
     md: {
+      fontSize: "18px",
+      color: "white"
+    },
+    lg: {
       fontSize: "18px",
       color: "white"
     }
