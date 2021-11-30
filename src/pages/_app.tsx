@@ -5,11 +5,11 @@ import { CartProvider } from "contexts/Cart";
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider theme={theme}>
-      <CartProvider>
+    <CartProvider>
+      <ChakraProvider theme={theme}>
         <Component {...pageProps} />
-      </CartProvider>
-    </ChakraProvider>
+      </ChakraProvider>
+    </CartProvider>
   );
 }
 export default App;
