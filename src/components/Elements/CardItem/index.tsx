@@ -10,7 +10,7 @@ import { useCart } from "contexts/Cart";
 import { formatPrice } from "utils/formatPrice";
 import { Rating } from "../Rating";
 
-export type Rating = {
+export type RatingItemProps = {
   rate: number;
   count?: number;
 };
@@ -22,7 +22,7 @@ export type CardItemProps = {
   description: string;
   category?: string;
   image: string;
-  rating: Rating;
+  rating: RatingItemProps;
 };
 
 const CardItem = ({
